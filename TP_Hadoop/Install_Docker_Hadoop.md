@@ -52,55 +52,17 @@ Ce container contient une distribution _Linux/Ubuntu_, et les librairies nécess
  ```shell
  root@hadoop-master:~#
  ```
- Il s'agit du ```shell``` ou du ```bash``` (_Linux/Ubuntu_) du nœud maître. Nous allons en profiter pour installer _Python2.7_ (version requise pour la version d'**Hadoop** installée):
+ Il s'agit du ```shell``` ou du ```bash``` (_Linux/Ubuntu_) du nœud maître. 
+ La commande ls, qui liste les fichiers et dossiers du dossier en cours, doit faire état des fichiers suivants :
  ```shell
- apt-get update
- apt-get install python3
+hdfs start-hadoop.sh ventes
  ```
-
-2. Cette installation de _Python_ doit aussi être réalisée sur les _Datanodes_. Quittez le contenaire `hadoop-master`
- ```shell
- exit
- ```
- Puis, enchaînez les commandes suivantes (une par une) pour le container `hadoop-slave1` :
- ```shell
- docker exec -it hadoop-slave1 bash
- ```
- Puis
- ```shell
- apt-get update
- apt-get install python3
- exit
- ```
- et pour le container `hadoop-slave2`
- ```shell
- docker exec -it hadoop-slave2 bash
- ```
- Puis
- ```shell
- apt-get update
- apt-get install python3
- exit
- ```
-
-3. Enfin, entrez à nouveau dans le container `hadoop-master` dans lequel nous allons lancer les _jobs_ :
- ```shell
- docker exec -it hadoop-master bash
- ```  
- Effacez les fichiers inutiles pour la suite avec la commande ```rm```:
- ```shell
- rm purchases2.txt run-wordcount.sh start-kafka-zookeeper.sh
- ```
- La commande ```ls```, qui liste les fichiers et dossiers du dossier en cours, doit faire état des fichiers suivants :
- ```shell
- hdfs start-hadoop.sh purchases.txt
- ```
- Le fichier _purchases.txt_ nous sera utile dans la seconde partie du TP.
+Le dossier ventes contient un fichier purchases.txt qui sera utilisé lors de la seconde partie du TP.
 
 **Remarque** Ces étapes de configuration ne doivent être réalisées qu'une seule fois. Pour relancer le cluster (une fois qu'on a fermer et relancer son ordinateur p. ex.), il suffira 
 
   1. de lancer l'application ```Docker Desktop```, qui lance les _daemon Docker_.   
-  1. de lancer la commande suivante :
+  2. de lancer la commande suivante :
    ```shell
    docker start hadoop-master hadoop-slave1 hadoop-slave2
    ```
