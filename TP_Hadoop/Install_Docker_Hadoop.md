@@ -3,7 +3,7 @@
 
 # Installation de **Hadoop** via _Docker_
 
-Les étapes pour installer **Hadoop** via _Docker_ sont largement adaptées de la page de [Lilia Sfaxi](https://insatunisia.github.io/TP-BigData/), elles-mêmes reposant sur le projet [github de Kai LIU](https://github.com/kiwenlau/Hadoop-cluster-docker).
+Les étapes pour installer **Hadoop** via _Docker_ sont largement adaptées de la page de [Farah MHAMDI]((https://hub.docker.com/repository/docker/farahmhamdi/hadoop)/), elles-mêmes reposant sur le projet [github de Kai LIU](https://github.com/kiwenlau/Hadoop-cluster-docker).
 
 ---
 ## Installation de *Docker* et des nœuds
