@@ -53,11 +53,14 @@ Ce container contient une distribution _Linux/Ubuntu_, et les librairies nécess
  root@hadoop-master:~#
  ```
  Il s'agit du ```shell``` ou du ```bash``` (_Linux/Ubuntu_) du nœud maître. 
- La commande ls, qui liste les fichiers et dossiers du dossier en cours, doit faire état des fichiers suivants :
+Exécuter la commande suivante :
  ```shell
-hdfs start-hadoop.sh ventes
+./start-hadoop.sh
  ```
-Le dossier ventes contient un fichier purchases.txt qui sera utilisé lors de la seconde partie du TP.
+ La commande ls, qui liste les fichiers et dossiers du dossier en cours, doit faire état des fichiers suivants : un fichier purchases.txt qui sera utilisé lors de la seconde partie du TP.
+ ```shell
+ls -all
+ ```
 
 **Remarque** Ces étapes de configuration ne doivent être réalisées qu'une seule fois. Pour relancer le cluster (une fois qu'on a fermer et relancer son ordinateur p. ex.), il suffira 
 
