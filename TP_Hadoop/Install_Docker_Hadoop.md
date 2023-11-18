@@ -65,8 +65,7 @@ ls -all
 
 **Remarque** Ces étapes de configuration ne doivent être réalisées qu'une seule fois. Pour relancer le cluster (une fois qu'on a fermer et relancer son ordinateur p. ex.), il suffira 
 
-  1. de lancer l'application ```Docker Desktop```, qui lance les _daemon Docker_.   
-  2. de lancer la commande suivante :
+  1. de lancer la commande suivante :
    ```shell
    docker start hadoop-master hadoop-slave1 hadoop-slave2
    ```
