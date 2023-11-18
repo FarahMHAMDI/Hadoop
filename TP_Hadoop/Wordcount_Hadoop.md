@@ -1,12 +1,25 @@
 **Sommaire**
 
-[[_TOC_]]
 
 # Map-reduce, avec Hadoop
 
 Étant donnée l'installation précédente, nous allons exploiter le parallélisme de votre processeur, souvent constitué de 4 cœurs, et donc susceptible de lancer 4 instructions en parallèle. Parmi ces 4 cœurs, nous n'en exploiterons que 3 (1 pour le _Namenode_ et 2 pour les _Datanodes_), le dernier cœur étant à disposition de votre machine pour toutes les autres tâches qu'elle doit réaliser.
 
+Deux commandes pour commencer :
 
+   1. La commande
+```shell
+/usr/local/hadoop/bin/hdfs namenode -format
+```
+formate le disque dur hdfs. A ne faire que la première fois que vous rentrez dans le l_Namenode_
+   2. La commande
+```shell
+export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
+```   
+si vous disposez d'un processeur amd, ou la commande
+```shell
+export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-arm64"
+```   
 ---
 ## Lancement du _daemon_ **Hadoop**
 
