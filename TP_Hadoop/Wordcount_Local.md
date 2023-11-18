@@ -31,24 +31,23 @@ Pour récupérer le scripts, suivez les consignes:
 
 La commande ```ls``` permet de lister le contenu du dossier. Vous pouvez observer la présence des 2 fichiers _mapper.py_ et _reducer.py_, ainsi que du livre _Dracula_ (libre de droit, téléchargé depuis [cette adresse](http://www.textfiles.com/etext/FICTION/dracula)).
  Ce dernier peut être téléchargé depuis cette adresse, ou en exécutant, depuis un Terminal, la commande
-
+```shell
 wget http://www.textfiles.com/etext/FICTION/dracula
-
-**Remarque Windows** Pour les étudiants utilisant _Windows_, vous pourriez rencontrer des difficultés avec les 2 lignes suivantes, qui font appel à _Python_ en ligne de commandes. La raison : l'endroit où est stocké le programme _python.exe_ n'est pas connu de votre machine, il faut donc le préciser en modifiant la variable d'environnement _PATH_. Pour cela, vous pouvez suivre les indications données dans la Section `Method 2: Manually add Python to Windows Path` de [ce lien](https://datatofish.com/add-python-to-windows-path/).
-
-  - Lancez la commande suivante et observez le résultat:
-  ```shell
-  more dracula | python mapper.py
   ```
+ - Lancez la commande suivante et observez le résultat:
+  ```shell
+  cat dracula | python mapper.py
+  ```
+**Remarque Windows** Pour les étudiants utilisant _Windows_, vous pourriez rencontrer des difficultés avec les 2 lignes suivantes, qui font appel à _Python_ en ligne de commandes. La raison : l'endroit où est stocké le programme _python.exe_ n'est pas connu de votre machine, il faut donc le préciser en modifiant la variable d'environnement _PATH_. Pour cela, vous pouvez suivre les indications données dans la Section `Method 2: Manually add Python to Windows Path` de [ce lien](https://datatofish.com/add-python-to-windows-path/).
 
   - Lancez ensuite la commande entière et observez le résultat:
   ```shell
-  more dracula | python mapper.py | sort | python reducer.py 
+ cat dracula | python mapper.py | sort | python reducer.py 
   ```
 
 **Remarque importante** La première ligne de tous vos scripts _Python_ devra être
 ```shell
-#!/usr/bin/env python2.7
+#!/usr/bin/env python3
 ```
 Cette ligne indique que si le script doit être exécuté, alors c'est avec _python2.7_ qu'il doit l'être.
 
@@ -57,7 +56,7 @@ Cette ligne indique que si le script doit être exécuté, alors c'est avec _pyt
 
 *Remarque* : Pour stocker le résultat dans un fichier appelé _result.txt_, on lancera
 ```shell
-more dracula | python mapper.py | sort | python reducer.py > results.txt
+cat dracula | python mapper.py | sort | python reducer.py > results.txt
 ```
 
 Ouvrez ce fichier avec votre éditeur de texte préféré, et regardez les premières lignes. On constate de nombreux problèmes :
