@@ -54,6 +54,7 @@ Ce container contient une distribution _Linux/Ubuntu_, et les librairies nécess
  ```
  Il s'agit du ```shell``` ou du ```bash``` (_Linux/Ubuntu_) du nœud maître. 
 Exécuter la commande suivante :
+Ce script shell est conçu pour démarrer les services Hadoop associés au système de fichiers distribué HDFS et au gestionnaire de ressources YARN
  ```shell
 ./start-hadoop.sh
  ```
