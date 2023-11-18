@@ -19,7 +19,7 @@ Nous allons utiliser tout au long de ce TP trois contenaires représentant respe
 
 1. Depuis un _Terminal_, téléchargez l'image docker depuis [_dockerhub_](https://hub.docker.com) (volume à télécharger : 1.76 GB!) :
 ```shell
-docker pull liliasfaxi/spark-hadoop:hv-2.7.2
+docker pull farahmhamdi/hadoop:latest
 ```
 Ce container contient une distribution _Linux/Ubuntu_, et les librairies nécessaires pour utiliser **Hadoop**. Ce container ne contient pas _Python_, mais nous verrons comment l'installer _a posteriori_.
 
@@ -33,13 +33,13 @@ Ce container contient une distribution _Linux/Ubuntu_, et les librairies nécess
      ```shell
      docker run -itd --net=hadoop -p 50070:50070 -p 8088:8088 -p 7077:7077 -p 16010:16010 --name hadoop-master --hostname hadoop-master liliasfaxi/spark-hadoop:hv-2.7.2
 
-     docker run -itd -p 8040:8042 --net=hadoop --name hadoop-slave1 --hostname hadoop-slave1 liliasfaxi/spark-hadoop:hv-2.7.2
+     docker run -itd -p 8040:8042 --net=hadoop --name hadoop-slave1 --hostname hadoop-slave1 farahmhamdi/hadoop:latest
 
-     docker run -itd -p 8041:8042 --net=hadoop --name hadoop-slave2 --hostname hadoop-slave2 liliasfaxi/spark-hadoop:hv-2.7.2
+     docker run -itd -p 8041:8042 --net=hadoop --name hadoop-slave2 --hostname hadoop-slave2 farahmhamdi/hadoop:latest
      ```     
    **Remarque** Sur certaines machines, la première ligne de commande ne s’exécute pas correctement. L'erreur provient sans doute du port `50070` que doit déjà être utilisé par une autre application installée sur votre machine. Vous pouvez alors supprimer ce port de la première ligne de commande :
    ```shell
-   docker run -itd --net=hadoop -p 8088:8088 -p 7077:7077 -p 16010:16010 --name hadoop-master --hostname hadoop-master liliasfaxi/spark-hadoop:hv-2.7.2
+   docker run -itd --net=hadoop -p 8088:8088 -p 7077:7077 -p 16010:16010 --name hadoop-master --hostname hadoop-master farahmhamdi/hadoop:latest
    ```
 
 ---
@@ -56,7 +56,7 @@ Ce container contient une distribution _Linux/Ubuntu_, et les librairies nécess
  Il s'agit du ```shell``` ou du ```bash``` (_Linux/Ubuntu_) du nœud maître. Nous allons en profiter pour installer _Python2.7_ (version requise pour la version d'**Hadoop** installée):
  ```shell
  apt-get update
- apt-get install python2.7
+ apt-get install python3
  ```
 
 2. Cette installation de _Python_ doit aussi être réalisée sur les _Datanodes_. Quittez le contenaire `hadoop-master`
@@ -70,7 +70,7 @@ Ce container contient une distribution _Linux/Ubuntu_, et les librairies nécess
  Puis
  ```shell
  apt-get update
- apt-get install python2.7
+ apt-get install python3
  exit
  ```
  et pour le container `hadoop-slave2`
@@ -80,7 +80,7 @@ Ce container contient une distribution _Linux/Ubuntu_, et les librairies nécess
  Puis
  ```shell
  apt-get update
- apt-get install python2.7
+ apt-get install python3
  exit
  ```
 
