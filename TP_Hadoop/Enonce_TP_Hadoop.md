@@ -1,6 +1,5 @@
 **Sommaire**
 
-[[_TOC_]]
 
 # Travaux pratiques sous **Hadoop**
 
